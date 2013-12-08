@@ -3,24 +3,10 @@
 //  обработчик нажатий
 
 void InitControl(){
-#ifdef ATMEGA328
-	KEY_DDR=0b00111000;     //переписать на биты
-//	DDRB |= (1 << PC1)|(1 << PC2)|(1 << PC3)|(1 << PC4)|(1 << PC5)|(1 << PC6);
-	KEY_PORT=0b00000111;        //здесь тоже избавиться от магических символов
-#endif // ATMEGA328
-#ifdef ATMEGA8
     KEY_PORT |= KEY_MASK;
 	KEY_DDR &= ~ KEY_MASK;
-#endif
-//MenuInit();
 }
-//*/
-/*
-uint8_t KeyCode(){
 
-    return (flags.KeyPin);
-    }
-//*/
 void KeyState(){
 
     if (((flags.KeyPressed)&&(flags.KeyReleased))||((flags.KeyPressed)&&(flags.KeyPushLong))){
