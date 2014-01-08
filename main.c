@@ -10,6 +10,11 @@ TODO:
  */
 
 #include <avr/io.h>
+///#include "onewire.h"
+///#include "encoder.h"
+///#include "7seg.h"
+///#include "zero_cross.h"
+///#include "ppm.h"
 
 int main(void)
 {
