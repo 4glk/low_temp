@@ -40,6 +40,10 @@
 			<Add after="avr-objcopy --no-change-warnings -j .eeprom --change-section-lma .eeprom=0 -O binary $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_FILE).eep.bin" />
 			<Add after="avr-size $(TARGET_OUTPUT_FILE)" />
 		</ExtraCommands>
+		<Unit filename="encoder/encoder.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="encoder/encoder.h" />
 		<Unit filename="indicator/indicator.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -52,6 +56,14 @@
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="menu/MicroMenu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="menu/MicroMenu.h" />
+		<Unit filename="menu/menu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="menu/menu.h" />
 		<Unit filename="onewire/OWfunc.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -69,11 +81,17 @@
 		</Unit>
 		<Unit filename="onewire/onewire.h" />
 		<Unit filename="pin_macros.h" />
+		<Unit filename="ppm/Triac_control.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="scheduler/dispatch.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="scheduler/dispatch.h" />
-		<Unit filename="sheduler/dispatch.h" />
+		<Unit filename="shift/shift.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="shift/shift.h" />
 		<Extensions>
 			<envvars />
 			<code_completion />

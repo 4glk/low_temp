@@ -62,7 +62,6 @@ void DeleteTask (uint8_t j)
 //    usartWrite('S');
 }
 
-
 ISR(TIMER2_OVF_vect){
   //  timer2++;
    TCNT2 = StartFrom;

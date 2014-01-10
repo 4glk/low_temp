@@ -10,6 +10,8 @@ TODO:
  */
 
 #include <avr/io.h>
+#include "HAL.h"
+//#include "pin_macros.h"
 ///#include "onewire.h"
 ///#include "encoder.h"
 ///#include "7seg.h"

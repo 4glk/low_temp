@@ -79,7 +79,7 @@ void temperatureRead(){
     				printf("\r"); print_address(owDevicesIDs[i]); // печатаем знак переноса строки, затем - адрес
     				printf(" - Thermometer DS18B20"); // печатаем тип устройства
     				DS18x20_StartMeasureAddressed(owDevicesIDs[i]); // запускаем измерение
-    				timerDelayMs(800); // ждем минимум 750 мс, пока конвентируется температура
+//    				timerDelayMs(800); // ждем минимум 750 мс, пока конвентируется температура
     				unsigned char	data[2]; // переменная для хранения старшего и младшего байта данных
     				DS18x20_ReadData(owDevicesIDs[i], data); // считываем данные
     				unsigned char	themperature[3]; // в этот массив будет записана температура
