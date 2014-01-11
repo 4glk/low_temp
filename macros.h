@@ -11,7 +11,7 @@
 // битовые поля
 #pragma once
 #include <stdbool.h>
-//*
+/*
 typedef struct { //булеановы переменные , зачем тратить на каждый флаг по байту ?
 //  bool State_Automate:1;    //обработчик
   bool KeyPressed:1;        //флаг нажатия клавиши
@@ -44,7 +44,7 @@ PackedBool flags;
 #define ibi(reg,bit) reg ^= (1<<bit)
 #define CheckBit(reg,bit) (reg&(1<<bit))
 
-void RunTasks(void);
+//void RunTasks(void);
 
 #endif // MACROS_
 

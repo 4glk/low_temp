@@ -19,26 +19,29 @@ void Send_Byte(char byte){
           //*
          // char bit;
           //bit&=(byte<<i);
-          if (byte&0x80) ON(SHIFT_data);
+          if ((byte&0x80)==0x00) ON(SHIFT_data);
           else OFF(SHIFT_data);
         //*/
-        __asm("nop");
-        __asm("nop");
-        __asm("nop");
+        byte<<=1;
+       // __asm("nop");
+      //  __asm("nop");
+       // __asm("nop");
             ON(SHIFT_clk);
-        __asm("nop");
-        __asm("nop");
-        __asm("nop");
+        //__asm("nop");
+       // __asm("nop");
+       // __asm("nop");
             OFF(SHIFT_clk);
-            __asm("nop");
-            __asm("nop");
-            __asm("nop");
-             byte<<=1;
+         //   __asm("nop");
+         //   __asm("nop");
+         //   __asm("nop");
+
         }
+                OFF(SHIFT_latch);
+
         ON(SHIFT_latch);
-        __asm("nop");
-        __asm("nop");
-        __asm("nop");
+       // __asm("nop");
+       // __asm("nop");
+        //__asm("nop");
         OFF(SHIFT_latch);
        //ON(SHIFT_latch);
 }

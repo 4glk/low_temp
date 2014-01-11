@@ -16,8 +16,8 @@
 //#define SHIFT_DDR
 //#define SHIFT_PIN
 
-#define SHIFT_data  C,1,H// pin_macros format
-#define SHIFT_clk   C,0,H
+#define SHIFT_data  C,0,H// pin_macros format
+#define SHIFT_clk   C,1,H
 #define SHIFT_latch C,2,H
 
 //DRIVER (SHIFT_data, OUT);  // pin_macros format
