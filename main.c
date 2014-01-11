@@ -18,13 +18,16 @@ TODO:
 ///#include "zero_cross.h"
 ///#include "ppm.h"
 
+extern void Send_Byte();
 int main(void)
 {
 
     // Insert code
+    char i=0;
+    while(1){
+     Send_Byte(i++);
+    };
 
-    while(1)
-    ;
 
     return 0;
 }

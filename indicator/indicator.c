@@ -360,5 +360,5 @@ void IND_Update(void)
   }
  #endif
 #endif
-    AddTask(IND_Update,5);
+    AddTask(IND_Update,1);
 }

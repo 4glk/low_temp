@@ -12,6 +12,7 @@
 				<Option type="1" />
 				<Option compiler="avrgcc" />
 				<Compiler>
+					<Add option="-mmcu=atmega32" />
 					<Add option="-g" />
 				</Compiler>
 			</Target>
@@ -21,18 +22,15 @@
 				<Option type="1" />
 				<Option compiler="avrgcc" />
 				<Compiler>
+					<Add option="-mmcu=atmega8" />
 					<Add option="-Os" />
 				</Compiler>
 			</Target>
 		</Build>
 		<Compiler>
-			<Add option="-mmcu=atmega8" />
 			<Add option="-Wall" />
 			<Add option="-DF_CPU=8000000UL" />
 		</Compiler>
-		<Linker>
-			<Add option="-mmcu=atmega8" />
-		</Linker>
 		<ExtraCommands>
 			<Add after="avr-objcopy -O ihex -R .eeprom -R .eesafe $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_FILE).hex" />
 			<Add after="avr-objcopy --no-change-warnings -j .eeprom --change-section-lma .eeprom=0 -O ihex $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_FILE).eep.hex" />
@@ -40,16 +38,35 @@
 			<Add after="avr-objcopy --no-change-warnings -j .eeprom --change-section-lma .eeprom=0 -O binary $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_FILE).eep.bin" />
 			<Add after="avr-size $(TARGET_OUTPUT_FILE)" />
 		</ExtraCommands>
+		<Unit filename="HAL.h" />
 		<Unit filename="encoder/encoder.c">
 			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
 		</Unit>
 		<Unit filename="encoder/encoder.h" />
+		<Unit filename="indicator/7seg.c">
+			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="indicator/7seg.h" />
 		<Unit filename="indicator/indicator.c">
 			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
 		</Unit>
 		<Unit filename="indicator/indicator.h" />
+		<Unit filename="indicator/spi.c">
+			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="indicator/spi.h" />
 		<Unit filename="kbd/kbd.c">
 			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
 		</Unit>
 		<Unit filename="kbd/kbd.h" />
 		<Unit filename="macros.h" />
@@ -58,40 +75,62 @@
 		</Unit>
 		<Unit filename="menu/MicroMenu.c">
 			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
 		</Unit>
 		<Unit filename="menu/MicroMenu.h" />
 		<Unit filename="menu/menu.c">
 			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
 		</Unit>
 		<Unit filename="menu/menu.h" />
 		<Unit filename="onewire/OWfunc.c">
 			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
 		</Unit>
 		<Unit filename="onewire/OWfunc.h" />
 		<Unit filename="onewire/delay.c">
 			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
 		</Unit>
 		<Unit filename="onewire/delay.h" />
 		<Unit filename="onewire/ds18x20.c">
 			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
 		</Unit>
 		<Unit filename="onewire/ds18x20.h" />
 		<Unit filename="onewire/onewire.c">
 			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
 		</Unit>
 		<Unit filename="onewire/onewire.h" />
 		<Unit filename="pin_macros.h" />
 		<Unit filename="ppm/Triac_control.c">
 			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
 		</Unit>
 		<Unit filename="scheduler/dispatch.c">
 			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
 		</Unit>
 		<Unit filename="scheduler/dispatch.h" />
 		<Unit filename="shift/shift.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="shift/shift.h" />
+		<Unit filename="usart/usart.c">
+			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="usart/usart.h" />
 		<Extensions>
 			<envvars />
 			<code_completion />
