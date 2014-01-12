@@ -47,8 +47,6 @@
 		<Unit filename="encoder/encoder.h" />
 		<Unit filename="indicator/7seg.c">
 			<Option compilerVar="CC" />
-			<Option compile="0" />
-			<Option link="0" />
 		</Unit>
 		<Unit filename="indicator/7seg.h" />
 		<Unit filename="indicator/indicator.c">

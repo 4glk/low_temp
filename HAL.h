@@ -29,6 +29,10 @@ TCCR2=(1<<CS20)|(1<<CS21);
 #define SHIFT_clk   C,0,H
 #define SHIFT_latch C,2,H
 
+#define DIG1    C,3,L
+#define DIG2    C,4,L
+#define DIG3    C,5,L
+
 #warning "all right its m8"
 //#error "works !!!"
 
