@@ -12,7 +12,7 @@
 				<Option type="1" />
 				<Option compiler="avrgcc" />
 				<Compiler>
-					<Add option="-mmcu=atmega32" />
+					<Add option="-mmcu=atmega8" />
 					<Add option="-g" />
 				</Compiler>
 			</Target>
@@ -29,7 +29,7 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
-			<Add option="-DF_CPU=1000000UL" />
+			<Add option="-DF_CPU=8000000UL" />
 		</Compiler>
 		<ExtraCommands>
 			<Add after="avr-objcopy -O ihex -R .eeprom -R .eesafe $(TARGET_OUTPUT_FILE) $(TARGET_OUTPUT_FILE).hex" />
