@@ -37,12 +37,12 @@ int main(void)
     sei();
 //    TCCR2=BIT(CS21);// тактовую 1мег делем на 8
     // Insert code
-    char i=0;
+   // int i=0;
     while(1){
-            Ind_Buffer(67);
-           // if (i>21) i=0;
+            Ind_Buffer(123);
+       //     if (++i>999) i=0;
             // Send_Byte(249);
-           //  _delay_ms(700);
+        //     _delay_ms(250);
     };
     return 0;
 }

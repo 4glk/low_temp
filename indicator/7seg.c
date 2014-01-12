@@ -11,22 +11,20 @@ void Digits_Init(){
 
 void Ind_Buffer(int value){
     // допустим value = 111; нужно чтобы отображало 111
-    char dig;
-     OFF(DIG1);OFF(DIG2);OFF(DIG3);
+    static char dig;
+    // OFF(DIG1);OFF(DIG2);OFF(DIG3);
  for (char dig=0;dig<3;dig++)
     switch (dig){
 
-        case 0 : Send_Byte(number[value%1000/100]);ON(DIG1);OFF(DIG2);OFF(DIG3);break;
-        case 1 : Send_Byte(number[value%100/10]);ON(DIG2);OFF(DIG1);OFF(DIG3);break;
-        case 2 : Send_Byte(number[value%10]);ON(DIG3);OFF(DIG1);OFF(DIG2);break;
+        case 0 : OFF(DIG2);OFF(DIG3);Send_Byte(number[value%1000/100]);ON(DIG1);break;
+        case 1 : OFF(DIG1);OFF(DIG3);Send_Byte(number[value%100/10]);ON(DIG2);break;
+        case 2 : OFF(DIG1);OFF(DIG2);Send_Byte(number[value%10/1]);ON(DIG3);break;
 
 //        case 0 : Send_Byte(number[1]);ON(DIG1);break;
 //        case 1 : Send_Byte(number[1]);ON(DIG2);break;
 //        case 2 : Send_Byte(number[1]);ON(DIG3);break;
         default:break;
     }
-   // dig++;
-
     if (dig>=3) dig=0;
 }
 
