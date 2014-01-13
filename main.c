@@ -46,7 +46,7 @@ int main(void)
     // Insert code
    // int i=0;
     while(1){
-            Encoder_Scan(0,125);
+            Encoder_Scan(0,99);
             Ind_Buffer(EncData);
        //     if (++i>999) i=0;
             // Send_Byte(249);
