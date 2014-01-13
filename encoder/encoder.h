@@ -3,11 +3,11 @@
 
 #include <avr/io.h>
 
-#define PORT_encoder PORTD /*регистр порта энкодера*/
-#define PIN_encoder  PIND  /*регистр выводов порта энкодера*/
-#define DDR_encoder  DDRD  /*регистр направления*/
-#define ENC_0        PD5   /*вывод 0 энкодера*/
-#define ENC_1        PD7   /*вывод 1 энкодера*/
+#define PORT_encoder PORTB /*регистр порта энкодера*/
+#define PIN_encoder  PINB  /*регистр выводов порта энкодера*/
+#define DDR_encoder  DDRB  /*регистр направления*/
+#define ENC_0        PB0   /*вывод 0 энкодера*/
+#define ENC_1        PB2   /*вывод 1 энкодера*/
 #define num_of_st    4     /*количество состояний на один "щелчок"*/
 #define state_0      0x00  /*состояние выводов 0 энкодера*/
 #define state_1      _BV(ENC_0)             /*состояние выводов 1 энкодера*/

@@ -39,10 +39,14 @@
 			<Add after="avr-size $(TARGET_OUTPUT_FILE)" />
 		</ExtraCommands>
 		<Unit filename="HAL.h" />
-		<Unit filename="encoder/encoder.c">
+		<Unit filename="encoder/enc.c">
 			<Option compilerVar="CC" />
 			<Option compile="0" />
 			<Option link="0" />
+		</Unit>
+		<Unit filename="encoder/enc.h" />
+		<Unit filename="encoder/encoder.c">
+			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="encoder/encoder.h" />
 		<Unit filename="indicator/7seg.c">

@@ -1,24 +1,25 @@
-//Набор функций для обслуживания инкрементального энкодера
-//Автор s_black - www.embed.com.ua
-//июль 2010 г.
+#include "enc.h"
 
-#include "encoder.h"
-
-void Encoder_init (void)//Функция инициализации энкодера
-{
-    DDR_encoder &= ~_BV(ENC_0);//инициализируем входы
-	DDR_encoder &= ~_BV(ENC_1);//для подключения энкодера
-	PORT_encoder |= _BV(ENC_0) | _BV(ENC_1);//подключаем внутренние резистры
+void Encoder_Init(){
+    //*
+    DRIVER (ENC0,IN);
+    DRIVER (ENC0,PULLUP);
+    DRIVER (ENC1,IN);
+    DRIVER (ENC1,PULLUP);
+    DRIVER (ENC_BTN,IN);
+    DRIVER (ENC_BTN,PULLUP);//*/
 }
 
 void Encoder_Scan(unsigned int min, unsigned int max)//Функция обработки энкодера
 {
     static unsigned char New, EncPlus, EncMinus;//Переменные нового значения энкодера, промежуточные переменные + и -
 
-    New = PIN_encoder & (_BV(ENC_1) | _BV(ENC_0));// Считываем настоящее положение энкодера
+ //   New = PIN_encoder & (_BV(ENC1) | _BV(ENC0));// Считываем настоящее положение энкодера
+        New = (ACTIVE(ENC1)|ACTIVE(ENC0));
 
     if(New != EncState)//Если значение изменилось по отношению к прошлому
     {
+      //*//switch macros give error , then deploy in if else construction
         switch(EncState) //Перебор прошлого значения энкодера
 	    {
 	    case state_2:if(New == state_3) EncPlus++;//В зависимости от значения увеличиваем
@@ -35,7 +36,22 @@ void Encoder_Scan(unsigned int min, unsigned int max)//Функция обработки энкодер
 		       break;
         default:break;
 	    }
-
+    //*/
+    /*//trouble whith macros
+        if(EncState == state_2){ //Перебор прошлого значения энкодера
+            if(New == state_3) EncPlus++;//В зависимости от значения увеличиваем
+            if(New == state_0) EncMinus++;//Или уменьшаем
+        }else if(EncState==state_0){
+            if(New == state_2) EncPlus++;
+		    if(New == state_1) EncMinus++;
+        }else if(EncState==state_1){
+            if(New == state_0) EncPlus++;
+		    if(New == state_3) EncMinus++;
+        }else if(EncState==state_3){
+            if(New == state_1) EncPlus++;
+		    if(New == state_2) EncMinus++;
+        }
+        //*/
 		if(EncPlus == num_of_st) //если прошёл один "щелчок"
 		{
 		    if(EncData++ >= max) EncData = max;//увеличиваем значение, следим, чтобы не выйти за границы верхнего

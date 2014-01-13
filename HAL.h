@@ -1,6 +1,6 @@
 #ifndef HAL_H
 #define HAL_H
-
+//#pragma once
 #if defined(__AVR_ATtiny13__)
 #define __CPU	AVR_ATtiny13
 // Timer/Counter 0 initialization
@@ -25,14 +25,19 @@ TCCR2=(1<<CS20)|(1<<CS21);
 
 // pin macros
 //shift register to 7seg
-#define SHIFT_data  C,1,H// pin_macros format
+#define SHIFT_data  C,1,H     // pin_macros format
 #define SHIFT_clk   C,0,H
 #define SHIFT_latch C,2,H
-
+//digits (low level for common cathode)
 #define DIG1    C,3,L
 #define DIG2    C,4,L
 #define DIG3    C,5,L
-
+//encoder
+/*//now its no works , macros cant be switch :(
+#define ENC0    B,0,H
+#define ENC1    B,1,H
+#define ENC_BTN B,2,H
+//*/
 #warning "all right its m8"
 //#error "works !!!"
 
