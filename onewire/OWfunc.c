@@ -12,6 +12,18 @@ void readTemperature(){
     				current_temp=themperature[1];
 }
 
+void USART_init()
+{
+	// Set baud rate
+	UBRRH = 0;
+	UBRRL = 51;
+	UCSRA = 0;
+	// Enable receiver and transmitter
+	UCSRB = (1<<TXEN);
+	// Set frame format
+	UCSRC = (1<<UCSZ1) | (1<<UCSZ0) | (1<<URSEL);
+}
+
 void print_address(unsigned char* address) {
 	printf("%.2X %.2X %.2X %.2X %.2X %.2X %.2X %.2X", address[0],address[1],address[2],address[3],address[4],address[5],address[6],address[7]);
 }
@@ -47,7 +59,7 @@ void usartDebug(){
 
 void temperatureStartConvert(){
         DS18x20_StartMeasure();
-        AddTask(temperatureRead,1000);
+        //AddTask(temperatureRead,1000);
 }
 
 void temperatureRead(){

@@ -15,7 +15,7 @@ void Encoder_Scan(unsigned int min, unsigned int max)//Функция обработки энкодер
 {
     static unsigned char New, EncPlus, EncMinus;//Переменные нового значения энкодера, промежуточные переменные + и -
 
-    New = PIN_encoder & (_BV(ENC_1) | _BV(ENC_0));// Считываем настоящее положение энкодера
+    New = PIN_encoder & (_BV(ENC_1) | _BV(ENC_0));// Считываем настоящее положение энкодера (маска пинов (1<<ENC_1)|(1<<ENC_0)
 
     if(New != EncState)//Если значение изменилось по отношению к прошлому
     {

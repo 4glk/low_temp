@@ -22,6 +22,7 @@ void Ind_Buffer(int value){
         default:break;
     }
     if (dig>=3) dig=0;
+   // AddTask(Ind_Buffer,5);
 }
 
 //prog_char number[] =

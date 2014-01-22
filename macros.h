@@ -5,13 +5,13 @@
 #define CB(port,bit) (PORT##port&= ~(1<<bit))   //clearbit а лучше конечно написать порт и бит шоб понятнее было
 #define TB(port,bit) (PORT##port^=(1<<bit))		//togglebit и это , терь не надо писать PORTC  терь только C и все
 #define CH(port,bit) (PIN##port&(1<<bit))		//checkbit CH(B,3) так терь оно будет глядеться
-
+//#define _BV(x)   (1 << x)  //чтобы десять раз его не искать
 #define ATMEGA8
 
 // битовые поля
 #pragma once
 #include <stdbool.h>
-/*
+//*
 typedef struct { //булеановы переменные , зачем тратить на каждый флаг по байту ?
 //  bool State_Automate:1;    //обработчик
   bool KeyPressed:1;        //флаг нажатия клавиши

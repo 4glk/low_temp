@@ -2,10 +2,10 @@
 
 void Encoder_Init(){
     //*
-    DRIVER (ENC0,IN);
-    DRIVER (ENC0,PULLUP);
-    DRIVER (ENC1,IN);
-    DRIVER (ENC1,PULLUP);
+    DRIVER (ENC_0,IN);
+    DRIVER (ENC_0,PULLUP);
+    DRIVER (ENC_1,IN);
+    DRIVER (ENC_1,PULLUP);
     DRIVER (ENC_BTN,IN);
     DRIVER (ENC_BTN,PULLUP);//*/
 }
@@ -15,11 +15,11 @@ void Encoder_Scan(unsigned int min, unsigned int max)//Функция обработки энкодер
     static unsigned char New, EncPlus, EncMinus;//Переменные нового значения энкодера, промежуточные переменные + и -
 
  //   New = PIN_encoder & (_BV(ENC1) | _BV(ENC0));// Считываем настоящее положение энкодера
-        New = (ACTIVE(ENC1)|ACTIVE(ENC0));
+        New = (ACTIVE(ENC_1)|ACTIVE(ENC_0));
 
     if(New != EncState)//Если значение изменилось по отношению к прошлому
     {
-      //*//switch macros give error , then deploy in if else construction
+      /*//switch macros give error , then deploy in if else construction
         switch(EncState) //Перебор прошлого значения энкодера
 	    {
 	    case state_2:if(New == state_3) EncPlus++;//В зависимости от значения увеличиваем
@@ -37,7 +37,7 @@ void Encoder_Scan(unsigned int min, unsigned int max)//Функция обработки энкодер
         default:break;
 	    }
     //*/
-    /*//trouble whith macros
+    //*//trouble whith macros   // скомпилировалось на релизе , но не считает в обратную сторону , вообще не катит такая конструкция
         if(EncState == state_2){ //Перебор прошлого значения энкодера
             if(New == state_3) EncPlus++;//В зависимости от значения увеличиваем
             if(New == state_0) EncMinus++;//Или уменьшаем

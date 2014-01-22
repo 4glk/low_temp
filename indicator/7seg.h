@@ -4,3 +4,4 @@
 #include <avr/pgmspace.h>
 
 extern void Send_Byte();
+extern void AddTask();

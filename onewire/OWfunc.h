@@ -17,3 +17,4 @@ extern void USART0_write();
 extern void timerDelayMs();
 void temperatureRead();
 void temperatureStartConvert();
+void USART_init();

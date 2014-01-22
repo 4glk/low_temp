@@ -3,6 +3,7 @@
 
 #include <avr/io.h>
 
+//#define _BV(x)   (1 << x)  //чтобы десять раз его не искать
 #define PORT_encoder PORTB /*регистр порта энкодера*/
 #define PIN_encoder  PINB  /*регистр выводов порта энкодера*/
 #define DDR_encoder  DDRB  /*регистр направления*/

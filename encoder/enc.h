@@ -12,9 +12,9 @@
 //#define state_2      _BV(ENC1)             /*состояние выводов 2 энкодера*/
 //#define state_3      _BV(ENC1) + _BV(ENC0)/*состояние выводов 3 энкодера*/
 //new
-#define state_1      ACTTIVE(ENC0)             /*состояние выводов 1 энкодера*/
-#define state_2      ACTTIVE(ENC1)             /*состояние выводов 2 энкодера*/
-#define state_3      ACTTIVE(ENC1) + ACTTIVE(ENC0)/*состояние выводов 3 энкодера*/
+#define state_1      ACTIVE(ENC_0)             /*состояние выводов 1 энкодера*/ //_BV(ENC_0)  || (1<<ENC_0)
+#define state_2      ACTIVE(ENC_1)             /*состояние выводов 2 энкодера*/
+#define state_3      ACTIVE(ENC_1) + ACTIVE(ENC_0)/*состояние выводов 3 энкодера*/
 
 
 unsigned int EncState,EncData;      //глобальные переменные состояния и данных энкодера
