@@ -17,6 +17,8 @@ TODO:
 #include <util/delay.h>
 //#include "pin_macros.h"
 #include "scheduler/dispatch.h"
+#include "onewire/onewire.h"
+//#include "onewire/OWfunc.h"
 ///#include "onewire.h"
 ///#include "encoder.h"
 ///#include "7seg.h"
@@ -40,6 +42,7 @@ extern void usartDebug();
 extern void temperatureStartConvert();
 extern void temperatureRead();
 extern void USART_init();
+extern void USART0_write(unsigned char data);
 //extern void AddTask (void (*taskfunc)(void), uint16_t taskdelay);
 
 unsigned int EncState,EncData;
@@ -90,4 +93,5 @@ void temperature_Measure(){
     AddTask(temperatureStartConvert,25);
     AddTask(temperatureRead,2500);
     AddTask(temperature_Measure,25000);
+    USART0_write('K');
 }

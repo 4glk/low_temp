@@ -113,8 +113,6 @@
 		</Unit>
 		<Unit filename="scheduler/dispatch.c">
 			<Option compilerVar="CC" />
-			<Option compile="0" />
-			<Option link="0" />
 		</Unit>
 		<Unit filename="scheduler/dispatch.h" />
 		<Unit filename="shift/shift.c">
