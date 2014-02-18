@@ -17,6 +17,7 @@ uint16_t dt;
 //extern void USART0_write(unsigned char data);
 // максимальное количество задач
 #define MAXnTASKS       8
+#define StartFrom 0xD3
 //Константа для UART`a
 //скорость обмена 9600 при частоте 8 МГц
 #define UBRRvalue 0x0033

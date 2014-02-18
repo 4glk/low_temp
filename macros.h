@@ -5,7 +5,7 @@
 #define CB(port,bit) (PORT##port&= ~(1<<bit))   //clearbit а лучше конечно написать порт и бит шоб понятнее было
 #define TB(port,bit) (PORT##port^=(1<<bit))		//togglebit и это , терь не надо писать PORTC  терь только C и все
 #define CH(port,bit) (PIN##port&(1<<bit))		//checkbit CH(B,3) так терь оно будет глядеться
-
+//#define _BV(x)   (1 << x)  //чтобы десять раз его не искать
 #define ATMEGA8
 
 // битовые поля
@@ -44,7 +44,7 @@ PackedBool flags;
 #define ibi(reg,bit) reg ^= (1<<bit)
 #define CheckBit(reg,bit) (reg&(1<<bit))
 
-void RunTasks(void);
+//void RunTasks(void);
 
 #endif // MACROS_
 
