@@ -1,7 +1,7 @@
 #include "ds18x20.h"
 #include "onewire.h"
 #include <stdio.h>
-#include "../HAL.h"
+//#include "../HAL.h"
 
 
 
