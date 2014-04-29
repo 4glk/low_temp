@@ -1,8 +1,15 @@
-low_temp.PWI
-Last Loaded low_temp.DBK
-low_temp.SDF
-low_temp.depend
-low_temp.layout
+*.PWI
+*.DBK
+*.SDF
+*.depend
+*.layout
+*.LBK
+*.rte
+*.DO
+*.EDF
+*.log
+*.sts
+
 obj/
 bin/
 !obj/Debug/*.elf
